@@ -1,0 +1,52 @@
+body {
+    user-select: none;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(30, 255, 0);
+}
+td {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(30, 255, 0);
+    box-shadow: 1px 1px 3px inset black ;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    user-select: none;
+}
+td.X {
+    background-color: rgb(0, 60, 255);
+    color: rgb(255, 193, 253);
+}
+td.O {
+    background-color: rgb(255, 0, 0);
+    color:rgb(198, 235, 255)
+}
+td:hover {
+    background-color: rgb(54, 144, 144);
+    box-shadow: 1px 1px 3px black;
+}
+td:active {
+    background-color: rgb(144, 54, 54);
+    box-shadow: 1px 1px 3px inset black;
+}
+td.X:hover {
+    background-color: rgb(0, 60, 255);
+    box-shadow: 1px 1px 3px inset black;
+    cursor: not-allowed;
+}
+td.O:hover {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 1px 1px 3px inset black;
+    cursor: not-allowed;
+}
+table {
+    cursor: not-allowed;
+    margin: auto;
+    padding: 6px;
+    border-spacing: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+}
