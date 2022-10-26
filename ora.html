@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="startTime()">
+
+    <h1>Óra</h1>
+
+    <div id="txt"></div>
+    
+    <script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+      setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};
+      return i;
+    }
+    </script>
+    <p>Ez a pontos idő és ezt nem vitathatja senki:)</p>
+</body>
+<section id="banner">
+    <div class="banner-text">
+        <id a class="banner-btn">
+            <a href="index.html"><span></span>&leftarrow;Vissza</a>
+        </id>
+    </div>
+</section>
+<style>
+body{
+    background: url(clock.jpg);
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+h1{
+    font-size: 60px;
+    font-weight: bolder;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Arial;
+    color: black;
+}
+p{
+    font-size: 30px;
+    font-weight: bolder;
+    vertical-align: middle;
+    font-family: Arial;
+    text-align: center;
+}
+div{
+    font-size: 200px;
+    font-family: Arial;
+    text-align: center;
+}
+#banner{
+    background-size: cover;
+}
+.banner-text{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+}
+.banner-btn a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 6px solid rgb(0, 0, 0);
+    font-family: Verdana;
+    background-color: rgb(255, 255, 255);
+    font-weight: bolder;
+} 
+</style>
+</html>
