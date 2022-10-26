@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Számvizsgálat </h1>
+    <form name="urlap">
+        <input type="text" name="beszam">
+        <input type="button" value="Számvizsgálat" onclick="vizsgal()">
+    </form>
+    <p>Paritás: <span id="paritas">?</span></p>
+    <p>Osztók száma: <span id="osztok">?</span></p>
+    <p>Prím szám: <span id="prim">?</span></p>
+    <p>Négyzetszám: <span id="negyzet">?</span></p>
+    <p>Számjegyek összege: <span id="szosszeg">?</span></p>
+    <script>
+        function negyzetszam(n) {
+            var i = 1;
+            let osszeg = 1;
+            while (osszeg < n) {
+                i= i+2;
+                osszeg= osszeg + i;
+            }
+            if (osszeg == n) {
+                return "Igen";
+            }
+            else {
+                return "Nem";
+            }
+        }
+        function osztokszama(n) {
+            var db = 0;
+            for (let i=1; i<=n; i++){
+                if (n % i == 0){
+                    db++;
+                }
+
+            }
+            return db;
+        }
+        function szamosszeg(n) {
+            let osszeg = 0;
+            while (n > 0){
+                osszeg += n%10;
+                n=Math.floor(n/10);
+            }
+            return osszeg;
+
+        }
+
+        function vizsgal() {        
+            var a = Number(document.forms["urlap"]["beszam"].value);
+            if (a % 2 == 0)
+            {
+                document.getElementById('paritas').innerHTML = 'Páros';
+            }
+            else
+            {
+                document.getElementById('paritas').innerHTML = 'Páratlan';
+            }
+            document.getElementById("osztok").innerHTML = osztokszama(a);
+            if (osztokszama(a) == 2)
+            {
+                document.getElementById('prim').innerHTML = 'Igen';
+            }
+            else
+            {
+                document.getElementById('prim').innerHTML = 'Nem';
+            }
+            document.getElementById('negyzet').innerHTML = negyzetszam(a);
+            document.getElementById('szosszeg').innerHTML = szamosszeg(a);
+
+        }
+    </script>
+</body>
+<section id="banner">
+    <div class="banner-text">
+        <id a class="banner-btn">
+            <a href="index.html"><span></span>&leftarrow;Vissza</a>
+        </id>
+    </div>
+</section>
+<style>
+    body{
+        background: url(01.png);
+        background-size: cover;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
+    h1{
+        font-size: 60px;
+        font-weight: bolder;
+        vertical-align: middle;
+        text-align: center;
+        font-family: Arial;
+    }
+    p{
+        font-size: 30px;
+        font-weight: bold;
+        vertical-align: middle;
+        font-family: Arial;
+    }
+    form{
+        text-align: center;
+    }
+    #banner{
+        background-size: cover;
+    }
+    .banner-text{
+        color: rgb(255, 255, 255);
+        padding-top: 80px;
+        font-weight: bold;
+    }
+    .banner-btn a{
+        width: 200px;
+        text-decoration: none;
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        border: 6px solid rgb(0, 0, 0);
+        font-family: Verdana;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        font-weight: bolder;
+    }
+    </style>
+</html>
