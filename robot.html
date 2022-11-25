@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Robot:</h1>
+    <p>###<br>
+        bemenet = input("Kérem a robot parancsait: ")<br> 
+        kimenet = ""<br>
+        <br>
+        E = 0<br>
+        D = 0<br>
+        N = 0<br>
+        K = 0<br>
+        <br>
+        for i in bemenet:<br>
+        if i == 'E':<br>
+        E= E + 1<br>
+        <br>
+        for i in bemenet:<br>
+            if i == 'D':<br>
+                D= D + 1<br>
+        <br>
+        for i in bemenet:<br>
+            if i == 'N':<br>
+                N= N + 1<br>
+        <br>
+        for i in bemenet:<br>
+            if i == 'K':<br>
+                K= K + 1<br>
+        <br>
+        print("E betűk száma:  ", E)<br>
+        print("D betűk száma:  ", D)<br>
+        print("K betűk száma:  ", K)<br>
+        print("N betűk száma:  ", N)<br>
+        <br>
+        x = K - N<br>
+        y = E - D<br>
+        <br>
+        for i in range(abs(y)):<br>
+            if y > 0:<br>
+                kimenet += "E"<br>
+                y -= 1<br>
+            if y < 0:<br>
+                kimenet += "D"<br>
+                y += 1<br>
+            <br>
+        for i in range(abs(x)):<br>
+            if x > 0:<br>
+                kimenet += "K"<br>
+                x -= 1<br>
+            if x < 0:<br>
+                kimenet += "N"<br>
+                x += 1<br>
+            <br>
+        print(kimenet)<br>
+    </p>
+    <section id="banner">
+        <div class="banner-text">
+            <id a class="banner-btn">
+                <a href="index.html"><span></span>&leftarrow;Vissza</a>
+            </id>
+        </div>
+    </section>
+</body>
+<style>
+    body{
+    background: url(robot.jpg);
+    background-size: cover;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+h1{
+    font-size: 60px;
+    font-weight: bolder;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Arial;
+}
+p{
+    font-size: 30px;
+    font-weight: bold;
+    vertical-align: middle;
+    font-family: Arial;
+}
+#banner{
+    background-size: cover;
+}
+.banner-text{
+    color: rgb(255, 255, 255);
+    padding-top: 80px;
+    font-weight: bold;
+}
+.banner-btn a{
+    width: 200px;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    border: 6px solid rgb(0, 0, 0);
+    font-family: Verdana;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bolder;
+} 
+</style>
+</html>
